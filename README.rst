@@ -3,6 +3,12 @@ pythonanywhere-cli
 
 *A PythonAnywhere Command Line Interface.*
 
+.. image:: https://travis-ci.org/cfc603/pythonanywhere-cli.png?branch=master
+    :target: https://travis-ci.org/cfc603/pythonanywhere-cli
+
+.. image:: https://codecov.io/github/cfc603/pythonanywhere-cli/coverage.svg?branch=master
+    :target: https://codecov.io/github/cfc603/pythonanywhere-cli?branch=master
+
 Credit
 ------
 
