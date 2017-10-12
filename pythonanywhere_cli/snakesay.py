@@ -1,4 +1,3 @@
-import sys
 import textwrap
 
 MESSAGE = "\n".join([

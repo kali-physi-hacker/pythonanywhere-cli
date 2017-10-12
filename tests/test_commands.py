@@ -40,8 +40,10 @@ class TestStaticFile(object):
             data={'url': '/url/', 'path': '/path/'},
             domain_name='tests.domain.com'
         )
-        snakesay.assert_called_with(("Static File mapping created for domain" 
-            " tests.domain.com with url /url/ and path /path/"))
+        snakesay.assert_called_with((
+            "Static File mapping created for domain"
+            " tests.domain.com with url /url/ and path /path/"
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -57,8 +59,10 @@ class TestStaticFile(object):
         client_call.assert_called_with(
             domain_name="tests.domain.com", static_id="123"
         )
-        snakesay.assert_called_with(("Static File mapping 123 for domain"
-            " tests.domain.com has been removed."))
+        snakesay.assert_called_with((
+            "Static File mapping 123 for domain"
+            " tests.domain.com has been removed."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -76,7 +80,10 @@ class TestStaticFile(object):
         client_call.assert_called_with(
             domain_name="tests.domain.com"
         )
-        snakesay.assert_called_with(("Static File mappings for domain tests.domain.com:  1. ID: 123 URL: /static/ Path: /static/"))
+        snakesay.assert_called_with((
+            "Static File mappings for domain tests.domain.com:  1. ID: 123"
+            " URL: /static/ Path: /static/"
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     def test_update_if_not_url_if_not_path(self, snakesay):
@@ -89,8 +96,10 @@ class TestStaticFile(object):
             })
         static_file.run()
 
-        snakesay.assert_called_with(("You should supply a url or path to make"
-            " any updates."))
+        snakesay.assert_called_with((
+            "You should supply a url or path to make"
+            " any updates."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -110,8 +119,10 @@ class TestStaticFile(object):
             static_id="123",
             data={"url": "/url/"}
         )
-        snakesay.assert_called_with(("Static File 123 for domain"
-            " tests.domain.com was updated. URL: /url/"))
+        snakesay.assert_called_with((
+            "Static File 123 for domain"
+            " tests.domain.com was updated. URL: /url/"
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -131,8 +142,10 @@ class TestStaticFile(object):
             static_id="123",
             data={"path": "/path/"}
         )
-        snakesay.assert_called_with(("Static File 123 for domain"
-            " tests.domain.com was updated. Path: /path/"))
+        snakesay.assert_called_with((
+            "Static File 123 for domain"
+            " tests.domain.com was updated. Path: /path/"
+        ))
 
 
 class TestWebapps(object):
@@ -153,8 +166,10 @@ class TestWebapps(object):
                 "domain_name": "tests.domain.com", "python_version": "python27"
             },
         )
-        snakesay.assert_called_with(("Webapp created with domain"
-            " tests.domain.com using python version python27."))
+        snakesay.assert_called_with((
+            "Webapp created with domain"
+            " tests.domain.com using python version python27."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -167,8 +182,10 @@ class TestWebapps(object):
         client_call = webapp.client.webapps.delete
 
         client_call.assert_called_with(domain_name="tests.domain.com")
-        snakesay.assert_called_with(("Webapp with domain"
-            " tests.domain.com deleted."))
+        snakesay.assert_called_with((
+            "Webapp with domain"
+            " tests.domain.com deleted."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -181,8 +198,10 @@ class TestWebapps(object):
         client_call = webapp.client.webapps.reload
 
         client_call.assert_called_with(domain_name="tests.domain.com")
-        snakesay.assert_called_with(("Webapp with domain"
-            " tests.domain.com has been reloaded."))
+        snakesay.assert_called_with((
+            "Webapp with domain"
+            " tests.domain.com has been reloaded."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     def test_update_if_not_virtualenv_path_if_not_python_vers(self, snakesay):
@@ -194,8 +213,10 @@ class TestWebapps(object):
             })
         webapp.run()
 
-        snakesay.assert_called_with(("You should supply a virtualenv_path or"
-            " python_version to make any updates."))
+        snakesay.assert_called_with((
+            "You should supply a virtualenv_path or"
+            " python_version to make any updates."
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -212,8 +233,10 @@ class TestWebapps(object):
         client_call.assert_called_with(
             domain_name="tests.domain.com", data={"virtualenv_path": "/path/"}
         )
-        snakesay.assert_called_with(("Webapp with domain tests.domain.com"
-            " was updated. Virtualenv Path: /path/"))
+        snakesay.assert_called_with((
+            "Webapp with domain tests.domain.com"
+            " was updated. Virtualenv Path: /path/"
+        ))
 
     @patch("pythonanywhere_cli.commands.snakesay")
     @patch("pythonanywhere_cli.commands.PythonAnywhere")
@@ -230,5 +253,7 @@ class TestWebapps(object):
         client_call.assert_called_with(
             domain_name="tests.domain.com", data={"python_version": "python27"}
         )
-        snakesay.assert_called_with(("Webapp with domain tests.domain.com"
-            " was updated. Python Version: python27"))
+        snakesay.assert_called_with((
+            "Webapp with domain tests.domain.com"
+            " was updated. Python Version: python27"
+        ))
