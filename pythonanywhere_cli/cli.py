@@ -38,6 +38,6 @@ COMMANDS = {
 def main():
     options = docopt(__doc__, version=VERSION)
     for command, command_class in COMMANDS.items():
-        if options.has_key(command) and options[command]:
+        if command in options and options[command]:
             command_instance = globals()[command_class](options)
             command_instance.run()

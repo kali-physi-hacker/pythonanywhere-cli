@@ -26,9 +26,9 @@ class Command(object):
                 command_function = getattr(self, command)
                 try:
                     message = command_function()
-                    print snakesay(message)
+                    print(snakesay(message))
                 except PythonAnywhereError as error:
-                    print snakesay(error.message)
+                    print(snakesay(error.args[0]))
 
 
 class StaticFile(Command):
