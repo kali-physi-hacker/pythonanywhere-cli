@@ -10,6 +10,7 @@ python:
   - "3.6"
 
 env:
+  global:
     - PYTHONANYWHERE_CLI_API_KEY="API_KEY"
     - PYTHONANYWHERE_CLI_USER="USER"
 
