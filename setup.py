@@ -40,7 +40,7 @@ setup(
     version = __version__,
     description = "PythonAnywhere Command Line Interface.",
     long_description = long_description,
-    url = "https://github.com/cfc603/pythonanywhere_cli",
+    url = "https://github.com/cfc603/pythonanywhere-cli",
     author = "Trevor Watson",
     author_email = "wtrevor162@gmail.com",
     license = "MIT",
@@ -60,7 +60,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords = "pythonanywhere_cli cli pythonanywhere",
+    keywords = "pythonanywhere_cli cli pythonanywhere pythonanywhere-cli",
     packages = find_packages(exclude=["docs", "tests*"]),
     install_requires = ["docopt", "pythonanywhere"],
     extras_require = {
