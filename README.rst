@@ -12,7 +12,7 @@ pythonanywhere-cli
 Usage
 -----
 
-Set you environment variables::
+Set your environment variables::
 
     # Your API_KEY can be found at https://www.pythonanywhere.com/account and select the "API token" tab.
     $ export PYTHONANYWHERE_CLI_API_KEY="API_KEY"
