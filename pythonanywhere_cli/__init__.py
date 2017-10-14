@@ -1,1 +1,1 @@
-__version__ = "0.1.1"  # follows http://semver.org/
+__version__ = "0.2.0"  # follows http://semver.org/
