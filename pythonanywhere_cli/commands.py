@@ -15,10 +15,19 @@ class Command(object):
         self.options = options
         self.args = args
         self.kwargs = kwargs
-        self.client = PythonAnywhere(
-            api_key=os.environ["PYTHONANYWHERE_CLI_API_KEY"],
-            user=os.environ["PYTHONANYWHERE_CLI_USER"]
-        )
+        self.client = self.get_client()
+
+    def get_client(self):
+        api_key = self.options["--api_key"]
+        user = self.options["--user"]
+
+        if not api_key:
+            api_key = os.environ["PYTHONANYWHERE_CLI_API_KEY"]
+
+        if not user:
+            user = os.environ["PYTHONANYWHERE_CLI_USER"]
+
+        return PythonAnywhere(api_key=api_key, user=user)
 
     def run(self):
         for command in self.COMMANDS:
