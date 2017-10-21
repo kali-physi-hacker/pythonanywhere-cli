@@ -1,6 +1,6 @@
 import os
 
-from pythonanywhere.client import PythonAnywhere, PythonAnywhereError
+from pythonanywhere_wrapper.client import PythonAnywhere, PythonAnywhereError
 
 from .snakesay import snakesay
 

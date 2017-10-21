@@ -65,7 +65,7 @@ setup(
     ],
     keywords = "pythonanywhere_cli cli pythonanywhere pythonanywhere-cli",
     packages = find_packages(exclude=["docs", "tests*"]),
-    install_requires = ["docopt", "pythonanywhere"],
+    install_requires = ["docopt", "pythonanywhere-wrapper"],
     extras_require = {
         "test": [
             "coverage",
