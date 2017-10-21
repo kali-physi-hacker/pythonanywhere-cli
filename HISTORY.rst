@@ -4,6 +4,8 @@ History
 UNRELEASED
 ++++++++++
 
+* Update to use pythonanywhere-wrapper
+
 
 0.2.0 (2017-10-14)
 ++++++++++++++++++

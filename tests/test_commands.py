@@ -2,7 +2,7 @@ import os
 
 from mock import patch
 
-from pythonanywhere.client import PythonAnywhereError
+from pythonanywhere_wrapper.client import PythonAnywhereError
 from pythonanywhere_cli.commands import Command, StaticFile, Webapps
 
 
