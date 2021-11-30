@@ -80,11 +80,9 @@ class StaticFile(Command):
         response = self.client.webapps.static_files(domain_name=domain_name)
 
         message = "Static File mappings for domain {}:".format(domain_name)
-        counter = 0
-        for mapping in response.json():
-            counter += 1
+        for counter, mapping in enumerate(response.json()):
             message += "  {}. ID: {} URL: {} Path: {}".format(
-                counter,
+                counter+1,
                 mapping["id"],
                 mapping["url"],
                 mapping["path"],
@@ -98,7 +96,7 @@ class StaticFile(Command):
         url = self.options["--url"]
         path = self.options["--path"]
 
-        if not url and not path:
+        if url is None and path is None:
             return ("You should supply a url or path to make any updates.")
 
         data = {}
@@ -166,7 +164,7 @@ class Webapps(Command):
         virtualenv_path = self.options["--virtualenv_path"]
         python_version = self.options["--python_version"]
 
-        if not virtualenv_path and not python_version:
+        if virtualenv_path is None and python_version is None:
             return ("You should supply a virtualenv_path or python_version to"
                     " make any updates.")
 
